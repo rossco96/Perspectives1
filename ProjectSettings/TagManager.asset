@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TEST_LAYER
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - GameArea
   - 
   - 
   - 
