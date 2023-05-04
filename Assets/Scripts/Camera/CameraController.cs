@@ -32,6 +32,7 @@ public class CameraController : MonoBehaviour
 		m_currentCameraMode = 1;
 		m_isMovingToNextCamera = false;
 		m_currentAnimatedTime = 0.0f;
+		OnMoveCameraComplete();
 	}
 
 	private void Update()
@@ -138,7 +139,7 @@ public class CameraController : MonoBehaviour
 		switch (m_currentCameraMode)
 		{
 			case 1:
-				LevelManager.Instance.SetNextPhysics(new PhysicsFirstPerson());
+				//LevelManager.Instance.SetNextPhysics(new PhysicsFirstPerson());		// [TODO] Temp(?) moved to LevelManager
 				m_cameraFirstPerson.SetActive(true);
 				m_cameraBEV.SetActive(false);
 				m_cameraThirdPerson.SetActive(false);
@@ -163,5 +164,6 @@ public class CameraController : MonoBehaviour
 		}
 		m_isMovingToNextCamera = false;
 		m_currentAnimatedTime = 0.0f;
+		LevelManager.Instance.SetCameraMode(m_currentCameraMode);						// [TODO] (see TODO above)
 	}
 }
